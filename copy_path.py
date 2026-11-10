@@ -1,4 +1,5 @@
 import shutil
+import weakref
 
 from gi import require_version
 
@@ -14,6 +15,12 @@ except ImportError:
     def get_labels():
         return ("Copy Path", "Copy Paths")
 
+SHORTCUT_ACCEL = "<Control><Alt>c"
+MENU_ACTION_NAMES = (
+    "view.extension_extensions_0_OmarchyCopyPathNautilus%3A%3Acopy_full_path",
+    "view.extension_extensions_0_OmarchyCopyPathNautilus%3A%3Acopy_folder_path",
+)
+
 
 class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
     def __init__(self):
@@ -21,21 +28,44 @@ class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
         self._selected_paths = []
         self._folder_path = None
         self._shortcut_registered = False
+        self._configured_windows = weakref.WeakSet()
         GLib.idle_add(self._ensure_shortcut)
 
-    def _ensure_shortcut(self):
-        if self._shortcut_registered:
-            return False
+    def _attach_menu_accels(self, window):
+        if not isinstance(window, Gtk.Widget) or window in self._configured_windows:
+            return
 
+        controller = Gtk.ShortcutController()
+        controller.set_scope(Gtk.ShortcutScope.MANAGED)
+        controller.set_propagation_phase(Gtk.PropagationPhase.NONE)
+
+        for action_name in MENU_ACTION_NAMES:
+            trigger = Gtk.ShortcutTrigger.parse_string(SHORTCUT_ACCEL)
+            action = Gtk.NamedAction.new(action_name)
+            controller.add_shortcut(Gtk.Shortcut.new(trigger, action))
+
+        window.add_controller(controller)
+        self._configured_windows.add(window)
+
+    def _on_window_added(self, _app, window):
+        self._attach_menu_accels(window)
+
+    def _ensure_shortcut(self):
         app = Gio.Application.get_default()
         if not isinstance(app, Gtk.Application):
             return False
 
-        action = Gio.SimpleAction.new("copy-full-path", None)
-        action.connect("activate", self._on_shortcut_activate)
-        app.add_action(action)
-        app.set_accels_for_action("app.copy-full-path", ["<Control><Alt>c"])
-        self._shortcut_registered = True
+        if not self._shortcut_registered:
+            action = Gio.SimpleAction.new("copy-full-path", None)
+            action.connect("activate", self._on_shortcut_activate)
+            app.add_action(action)
+            app.set_accels_for_action("app.copy-full-path", [SHORTCUT_ACCEL])
+            app.connect("window-added", self._on_window_added)
+            self._shortcut_registered = True
+
+        for window in app.get_windows():
+            self._attach_menu_accels(window)
+
         return False
 
     def _copy_paths(self, paths):
