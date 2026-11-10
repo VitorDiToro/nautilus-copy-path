@@ -32,7 +32,7 @@ Correct attribution mistakes on the pull-request branch before it is merged. The
 Run these checks locally before opening a pull request:
 
 ```bash
-python3 -m py_compile copy_path.py copy_path_i18n.py
+python3 -m py_compile copy_path.py nautilus_copy_path/__init__.py nautilus_copy_path/i18n.py
 bash -n install.sh
 git diff --check
 ./install.sh
@@ -48,7 +48,7 @@ nautilus --new-window
 ## Workflow rules
 
 1. **Keep changes small and scoped to the task.** Avoid unrelated refactors or bundling multiple independent changes in a single pull request.
-2. **Clean separation of concerns.** Keep the Nautilus extension logic in `copy_path.py` and localization catalogs/resolution in `copy_path_i18n.py`.
+2. **Clean separation of concerns.** Keep the Nautilus extension entrypoint in `copy_path.py`, the localization handler in `nautilus_copy_path/i18n.py`, and the declarative string catalog in `nautilus_copy_path/translations.json`.
 3. **Zero external dependencies.** Rely only on Python's standard library and the GI bindings already loaded by Nautilus (`Gdk`, `Gio`, `GLib`, `GObject`, `Gtk`, `Nautilus`).
 4. **No dead code or speculative abstractions.** Write comments only to explain *why* something non-obvious is done, never *what* the line already says.
 5. **Test before claiming done.** Verify single-item selection, multi-item selection, empty folder background click, and the `Ctrl + Alt + C` shortcut.
@@ -61,17 +61,20 @@ nautilus --new-window
 
 ## Translations
 
-Context menu labels are stored in the `TRANSLATIONS` dictionary in `copy_path_i18n.py` as `(singular, plural)` tuples and resolved at runtime by `get_labels()` via `GLib.get_language_names()` and `locale.getlocale()`.
+Context menu labels are stored in `nautilus_copy_path/translations.json` as `{"one": "...", "other": "..."}` objects and resolved at runtime by `get_labels()` in `nautilus_copy_path/i18n.py` via `GLib.get_language_names()` and `locale.getlocale()`.
 
 When adding or updating a translation:
 
-1. Add the locale entry (`lang_REGION` and/or base `lang` code) to `TRANSLATIONS` in `copy_path_i18n.py` with both singular and plural forms:
-   ```python
-   "pt_BR": ("Copiar caminho completo", "Copiar caminhos completos"),
+1. Add the locale entry (`lang_REGION` and/or base `lang` code) to `nautilus_copy_path/translations.json` with both `"one"` (singular) and `"other"` (plural) keys:
+   ```json
+   "pt_BR": {
+     "one": "Copiar caminho completo",
+     "other": "Copiar caminhos completos"
+   }
    ```
-   For languages that do not distinguish singular and plural in menu labels (e.g., `zh_CN`, `zh_TW`, `ja`, `ko`), provide the same string for both elements of the tuple.
+   For languages that do not distinguish singular and plural in menu labels (e.g., `zh_CN`, `zh_TW`, `ja`, `ko`), provide the same string for both `"one"` and `"other"`.
 2. Verify language resolution from the command line:
    ```bash
-   LANGUAGE=pt_BR python3 -c 'import copy_path_i18n; print(copy_path_i18n.get_labels())'
+   LANGUAGE=pt_BR python3 -c 'from nautilus_copy_path.i18n import get_labels; print(get_labels())'
    ```
 3. Add a localized README under `docs/readme/README.<lang>.md` and link its flag in the `Supported Languages & Documentation` section of `README.md` and `docs/readme/README.*.md`.

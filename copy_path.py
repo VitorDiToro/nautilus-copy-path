@@ -9,7 +9,7 @@ require_version("Nautilus", "4.1")
 from gi.repository import Gdk, Gio, GLib, GObject, Gtk, Nautilus
 
 try:
-    from copy_path_i18n import get_labels
+    from nautilus_copy_path.i18n import get_labels
 except ImportError:
     def get_labels():
         return ("Copy Full Path", "Copy Full Paths")

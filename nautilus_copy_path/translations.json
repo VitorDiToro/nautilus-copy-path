@@ -1,0 +1,98 @@
+{
+  "en": {
+    "one": "Copy Full Path",
+    "other": "Copy Full Paths"
+  },
+  "zh_CN": {
+    "one": "复制完整路径",
+    "other": "复制完整路径"
+  },
+  "zh_SG": {
+    "one": "复制完整路径",
+    "other": "复制完整路径"
+  },
+  "zh": {
+    "one": "复制完整路径",
+    "other": "复制完整路径"
+  },
+  "zh_TW": {
+    "one": "複製完整路徑",
+    "other": "複製完整路徑"
+  },
+  "zh_HK": {
+    "one": "複製完整路徑",
+    "other": "複製完整路徑"
+  },
+  "zh_MO": {
+    "one": "複製完整路徑",
+    "other": "複製完整路徑"
+  },
+  "es_ES": {
+    "one": "Copiar ruta completa",
+    "other": "Copiar rutas completas"
+  },
+  "es_MX": {
+    "one": "Copiar ruta completa",
+    "other": "Copiar rutas completas"
+  },
+  "es_MS": {
+    "one": "Copiar ruta completa",
+    "other": "Copiar rutas completas"
+  },
+  "es_AR": {
+    "one": "Copiar ruta completa",
+    "other": "Copiar rutas completas"
+  },
+  "es": {
+    "one": "Copiar ruta completa",
+    "other": "Copiar rutas completas"
+  },
+  "pt_BR": {
+    "one": "Copiar caminho completo",
+    "other": "Copiar caminhos completos"
+  },
+  "pt_PT": {
+    "one": "Copiar caminho completo",
+    "other": "Copiar caminhos completos"
+  },
+  "pt": {
+    "one": "Copiar caminho completo",
+    "other": "Copiar caminhos completos"
+  },
+  "ru": {
+    "one": "Копировать полный путь",
+    "other": "Копировать полные пути"
+  },
+  "de": {
+    "one": "Vollständigen Pfad kopieren",
+    "other": "Vollständige Pfade kopieren"
+  },
+  "fr": {
+    "one": "Copier le chemin complet",
+    "other": "Copier les chemins complets"
+  },
+  "ja": {
+    "one": "フルパスをコピー",
+    "other": "フルパスをコピー"
+  },
+  "ko": {
+    "one": "전체 경로 복사",
+    "other": "전체 경로 복사"
+  },
+  "it": {
+    "one": "Copia percorso completo",
+    "other": "Copia percorsi completi"
+  },
+  "pl": {
+    "one": "Kopiuj pełną ścieżkę",
+    "other": "Kopiuj pełne ścieżki"
+  },
+  "tr": {
+    "one": "Tam Yolu Kopyala",
+    "other": "Tam Yolları Kopyala"
+  },
+  "uk": {
+    "one": "Копіювати повний шлях",
+    "other": "Копіювати повні шляхи"
+  }
+}
