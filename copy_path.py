@@ -12,7 +12,7 @@ try:
     from nautilus_copy_path.i18n import get_labels
 except ImportError:
     def get_labels():
-        return ("Copy Full Path", "Copy Full Paths")
+        return ("Copy Path", "Copy Paths")
 
 
 class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):

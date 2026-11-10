@@ -68,8 +68,8 @@ When adding or updating a translation:
 1. Add the locale entry (`lang_REGION` and/or base `lang` code) to `nautilus_copy_path/translations.json` with both `"one"` (singular) and `"other"` (plural) keys:
    ```json
    "pt_BR": {
-     "one": "Copiar caminho completo",
-     "other": "Copiar caminhos completos"
+     "one": "Copiar caminho",
+     "other": "Copiar caminhos"
    }
    ```
    For languages that do not distinguish singular and plural in menu labels (e.g., `zh_CN`, `zh_TW`, `ja`, `ko`), provide the same string for both `"one"` and `"other"`.

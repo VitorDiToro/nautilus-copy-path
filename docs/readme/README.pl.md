@@ -1,6 +1,6 @@
-# Nautilus Copy Full Path
+# Nautilus Copy Path
 
-> Dodaje akcję **Kopiuj pełną ścieżkę** oraz skrót `Ctrl + Alt + C` (znane z KDE Dolphin) do GNOME Files (Nautilus).
+> Dodaje akcję **Kopiuj ścieżkę** oraz skrót `Ctrl + Alt + C` (znane z KDE Dolphin) do GNOME Files (Nautilus).
 
 ## 🌐 Obsługiwane Języki i Dokumentacja
 
@@ -13,9 +13,9 @@ Menu kontekstowe automatycznie dostosowuje się do języka systemu. **Kliknij do
 ## Funkcje
 
 - **Menu kontekstowe (prawy przycisk myszy):**
-  - Na pojedynczym pliku lub katalogu: **Kopiuj pełną ścieżkę** (automatycznie w języku systemu)
-  - Na wielu zaznaczonych elementach: **Kopiuj pełne ścieżki** (jedna ścieżka w każdym wierszu)
-  - Na pustym tle katalogu: **Kopiuj pełną ścieżkę** (kopiuje ścieżkę bieżącego katalogu)
+  - Na pojedynczym pliku lub katalogu: **Kopiuj ścieżkę** (automatycznie w języku systemu)
+  - Na wielu zaznaczonych elementach: **Kopiuj ścieżki** (jedna ścieżka w każdym wierszu)
+  - Na pustym tle katalogu: **Kopiuj ścieżkę** (kopiuje ścieżkę bieżącego katalogu)
 - **Skrót klawiszowy (`Ctrl + Alt + C`):**
   - Kopiuje pełną ścieżkę zaznaczonych elementów lub ścieżkę bieżącego katalogu, jeśli nic nie zaznaczono.
 

@@ -1,6 +1,6 @@
-# Nautilus Copy Full Path
+# Nautilus Copy Path
 
-> KDE Dolphin'deki **Tam Yolu Kopyala** seçeneğini ve `Ctrl + Alt + C` kısayolunu GNOME Files (Nautilus) uygulamasına kazandırır.
+> KDE Dolphin'deki **Yolu Kopyala** seçeneğini ve `Ctrl + Alt + C` kısayolunu GNOME Files (Nautilus) uygulamasına kazandırır.
 
 ## 🌐 Desteklenen Diller ve Dokümantasyon
 
@@ -13,9 +13,9 @@ Sağ tık menüsü sistem dilinize otomatik olarak uyum sağlar. **Bu README dos
 ## Özellikler
 
 - **Sağ tık bağlam menüsü:**
-  - Tek bir dosya veya klasörde: **Tam Yolu Kopyala** (sistem dilinize göre otomatik çevrilir)
-  - Birden fazla seçili öğede: **Tam Yolları Kopyala** (her satırda bir yol)
-  - Klasörün boş alanında: **Tam Yolu Kopyala** (mevcut dizin yolunu kopyalar)
+  - Tek bir dosya veya klasörde: **Yolu Kopyala** (sistem dilinize göre otomatik çevrilir)
+  - Birden fazla seçili öğede: **Yolları Kopyala** (her satırda bir yol)
+  - Klasörün boş alanında: **Yolu Kopyala** (mevcut dizin yolunu kopyalar)
 - **Klavye kısayolu (`Ctrl + Alt + C`):**
   - Seçili öğelerin tam yolunu, hiçbir şey seçili değilse mevcut klasörün tam yolunu kopyalar.
 

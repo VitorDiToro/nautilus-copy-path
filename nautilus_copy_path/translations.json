@@ -1,98 +1,98 @@
 {
   "en": {
-    "one": "Copy Full Path",
-    "other": "Copy Full Paths"
+    "one": "Copy Path",
+    "other": "Copy Paths"
   },
   "zh_CN": {
-    "one": "复制完整路径",
-    "other": "复制完整路径"
+    "one": "复制路径",
+    "other": "复制路径"
   },
   "zh_SG": {
-    "one": "复制完整路径",
-    "other": "复制完整路径"
+    "one": "复制路径",
+    "other": "复制路径"
   },
   "zh": {
-    "one": "复制完整路径",
-    "other": "复制完整路径"
+    "one": "复制路径",
+    "other": "复制路径"
   },
   "zh_TW": {
-    "one": "複製完整路徑",
-    "other": "複製完整路徑"
+    "one": "複製路徑",
+    "other": "複製路徑"
   },
   "zh_HK": {
-    "one": "複製完整路徑",
-    "other": "複製完整路徑"
+    "one": "複製路徑",
+    "other": "複製路徑"
   },
   "zh_MO": {
-    "one": "複製完整路徑",
-    "other": "複製完整路徑"
+    "one": "複製路徑",
+    "other": "複製路徑"
   },
   "es_ES": {
-    "one": "Copiar ruta completa",
-    "other": "Copiar rutas completas"
+    "one": "Copiar ruta",
+    "other": "Copiar rutas"
   },
   "es_MX": {
-    "one": "Copiar ruta completa",
-    "other": "Copiar rutas completas"
+    "one": "Copiar ruta",
+    "other": "Copiar rutas"
   },
   "es_MS": {
-    "one": "Copiar ruta completa",
-    "other": "Copiar rutas completas"
+    "one": "Copiar ruta",
+    "other": "Copiar rutas"
   },
   "es_AR": {
-    "one": "Copiar ruta completa",
-    "other": "Copiar rutas completas"
+    "one": "Copiar ruta",
+    "other": "Copiar rutas"
   },
   "es": {
-    "one": "Copiar ruta completa",
-    "other": "Copiar rutas completas"
+    "one": "Copiar ruta",
+    "other": "Copiar rutas"
   },
   "pt_BR": {
-    "one": "Copiar caminho completo",
-    "other": "Copiar caminhos completos"
+    "one": "Copiar caminho",
+    "other": "Copiar caminhos"
   },
   "pt_PT": {
-    "one": "Copiar caminho completo",
-    "other": "Copiar caminhos completos"
+    "one": "Copiar caminho",
+    "other": "Copiar caminhos"
   },
   "pt": {
-    "one": "Copiar caminho completo",
-    "other": "Copiar caminhos completos"
+    "one": "Copiar caminho",
+    "other": "Copiar caminhos"
   },
   "ru": {
-    "one": "Копировать полный путь",
-    "other": "Копировать полные пути"
+    "one": "Копировать путь",
+    "other": "Копировать пути"
   },
   "de": {
-    "one": "Vollständigen Pfad kopieren",
-    "other": "Vollständige Pfade kopieren"
+    "one": "Pfad kopieren",
+    "other": "Pfade kopieren"
   },
   "fr": {
-    "one": "Copier le chemin complet",
-    "other": "Copier les chemins complets"
+    "one": "Copier le chemin",
+    "other": "Copier les chemins"
   },
   "ja": {
-    "one": "フルパスをコピー",
-    "other": "フルパスをコピー"
+    "one": "パスをコピー",
+    "other": "パスをコピー"
   },
   "ko": {
-    "one": "전체 경로 복사",
-    "other": "전체 경로 복사"
+    "one": "경로 복사",
+    "other": "경로 복사"
   },
   "it": {
-    "one": "Copia percorso completo",
-    "other": "Copia percorsi completi"
+    "one": "Copia percorso",
+    "other": "Copia percorsi"
   },
   "pl": {
-    "one": "Kopiuj pełną ścieżkę",
-    "other": "Kopiuj pełne ścieżki"
+    "one": "Kopiuj ścieżkę",
+    "other": "Kopiuj ścieżki"
   },
   "tr": {
-    "one": "Tam Yolu Kopyala",
-    "other": "Tam Yolları Kopyala"
+    "one": "Yolu Kopyala",
+    "other": "Yolları Kopyala"
   },
   "uk": {
-    "one": "Копіювати повний шлях",
-    "other": "Копіювати повні шляхи"
+    "one": "Копіювати шлях",
+    "other": "Копіювати шляхи"
   }
 }

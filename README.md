@@ -1,6 +1,6 @@
-# Nautilus Copy Full Path
+# Nautilus Copy Path
 
-> Bring KDE Dolphin's **Copy Full Path** action and `Ctrl + Alt + C` shortcut to GNOME Files (Nautilus).
+> Bring KDE Dolphin's **Copy Path** action and `Ctrl + Alt + C` shortcut to GNOME Files (Nautilus).
 
 ## 🌐 Supported Languages & Documentation
 
@@ -13,9 +13,9 @@ The context menu automatically adapts to your system language. **Click any flag 
 ## Features
 
 - **Right-click context menu:**
-  - On a single file or folder: **Copy Full Path** (automatically localized to your system language)
-  - On multiple selected items: **Copy Full Paths** (one path per line)
-  - On the empty background of a folder: **Copy Full Path** (copies the current directory path)
+  - On a single file or folder: **Copy Path** (automatically localized to your system language)
+  - On multiple selected items: **Copy Paths** (one path per line)
+  - On the empty background of a folder: **Copy Path** (copies the current directory path)
 - **Keyboard shortcut (`Ctrl + Alt + C`):**
   - Copies the full path(s) of the currently selected item(s), or the current directory path if nothing is selected.
 

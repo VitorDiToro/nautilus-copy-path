@@ -1,6 +1,6 @@
-# Nautilus Copy Full Path
+# Nautilus Copy Path
 
-> Bringt die Aktion **Vollständigen Pfad kopieren** und das Tastenkürzel `Ctrl + Alt + C` (wie in KDE Dolphin) in GNOME Files (Nautilus).
+> Bringt die Aktion **Pfad kopieren** und das Tastenkürzel `Ctrl + Alt + C` (wie in KDE Dolphin) in GNOME Files (Nautilus).
 
 ## 🌐 Unterstützte Sprachen & Dokumentation
 
@@ -13,9 +13,9 @@ Das Kontextmenü passt sich automatisch Ihrer Systemsprache an. **Klicken Sie un
 ## Funktionen
 
 - **Rechtsklick-Kontextmenü:**
-  - Bei einer einzelnen Datei oder einem Ordner: **Vollständigen Pfad kopieren** (automatisch in Ihrer Systemsprache)
-  - Bei mehreren ausgewählten Elementen: **Vollständige Pfade kopieren** (ein Pfad pro Zeile)
-  - Auf dem leeren Hintergrund eines Ordners: **Vollständigen Pfad kopieren** (kopiert den Pfad des aktuellen Ordners)
+  - Bei einer einzelnen Datei oder einem Ordner: **Pfad kopieren** (automatisch in Ihrer Systemsprache)
+  - Bei mehreren ausgewählten Elementen: **Pfade kopieren** (ein Pfad pro Zeile)
+  - Auf dem leeren Hintergrund eines Ordners: **Pfad kopieren** (kopiert den Pfad des aktuellen Ordners)
 - **Tastenkürzel (`Ctrl + Alt + C`):**
   - Kopiert den vollständigen Pfad der ausgewählten Elemente oder den aktuellen Ordnerpfad, wenn nichts ausgewählt ist.
 

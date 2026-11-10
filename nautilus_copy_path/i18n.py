@@ -5,7 +5,7 @@ from pathlib import Path
 
 from gi.repository import GLib
 
-DEFAULT_TRANSLATION = ("Copy Full Path", "Copy Full Paths")
+DEFAULT_TRANSLATION = ("Copy Path", "Copy Paths")
 TRANSLATIONS_PATH = Path(__file__).with_name("translations.json")
 
 

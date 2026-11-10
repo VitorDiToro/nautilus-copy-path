@@ -1,6 +1,6 @@
-# Nautilus Copy Full Path
+# Nautilus Copy Path
 
-> Porta l'azione **Copia percorso completo** e la scorciatoia `Ctrl + Alt + C` (in stile KDE Dolphin) su GNOME Files (Nautilus).
+> Porta l'azione **Copia percorso** e la scorciatoia `Ctrl + Alt + C` (in stile KDE Dolphin) su GNOME Files (Nautilus).
 
 ## 🌐 Lingue Supportate e Documentazione
 
@@ -13,9 +13,9 @@ Il menu contestuale si adatta automaticamente alla lingua di sistema. **Clicca s
 ## Funzionalità
 
 - **Menu contestuale (clic destro):**
-  - Su un singolo file o cartella: **Copia percorso completo** (localizzato automaticamente nella lingua di sistema)
-  - Su più elementi selezionati: **Copia percorsi completi** (un percorso per riga)
-  - Sullo sfondo vuoto di una cartella: **Copia percorso completo** (copia il percorso della cartella corrente)
+  - Su un singolo file o cartella: **Copia percorso** (localizzato automaticamente nella lingua di sistema)
+  - Su più elementi selezionati: **Copia percorsi** (un percorso per riga)
+  - Sullo sfondo vuoto di una cartella: **Copia percorso** (copia il percorso della cartella corrente)
 - **Scorciatoia da tastiera (`Ctrl + Alt + C`):**
   - Copia il percorso completo degli elementi selezionati o, se non è selezionato nulla, il percorso della cartella corrente.
 

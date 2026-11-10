@@ -1,6 +1,6 @@
-# Nautilus Copy Full Path
+# Nautilus Copy Path
 
-> Ajoute l'action **Copier le chemin complet** et le raccourci `Ctrl + Alt + C` (comme dans KDE Dolphin) à GNOME Files (Nautilus).
+> Ajoute l'action **Copier le chemin** et le raccourci `Ctrl + Alt + C` (comme dans KDE Dolphin) à GNOME Files (Nautilus).
 
 ## 🌐 Langues prises en charge et documentation
 
@@ -13,9 +13,9 @@ Le menu contextuel s'adapte automatiquement à la langue de votre système. **Cl
 ## Fonctionnalités
 
 - **Menu contextuel (clic droit) :**
-  - Sur un fichier ou dossier : **Copier le chemin complet** (traduit automatiquement selon la langue du système)
-  - Sur plusieurs éléments sélectionnés : **Copier les chemins complets** (un chemin par ligne)
-  - Sur l'arrière-plan vide d'un dossier : **Copier le chemin complet** (copie le chemin du répertoire courant)
+  - Sur un fichier ou dossier : **Copier le chemin** (traduit automatiquement selon la langue du système)
+  - Sur plusieurs éléments sélectionnés : **Copier les chemins** (un chemin par ligne)
+  - Sur l'arrière-plan vide d'un dossier : **Copier le chemin** (copie le chemin du répertoire courant)
 - **Raccourci clavier (`Ctrl + Alt + C`) :**
   - Copie le chemin complet des éléments sélectionnés, ou celui du dossier courant si rien n'est sélectionné.
 
