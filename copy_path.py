@@ -1,4 +1,3 @@
-import locale
 import shutil
 
 from gi import require_version
@@ -9,34 +8,11 @@ require_version("Nautilus", "4.1")
 
 from gi.repository import Gdk, Gio, GLib, GObject, Gtk, Nautilus
 
-DEFAULT_TRANSLATION = ("Copy Full Path", "Copy Full Paths")
-
-TRANSLATIONS = {
-    "en": DEFAULT_TRANSLATION,
-    "zh_CN": ("复制完整路径", "复制完整路径"),
-    "zh_SG": ("复制完整路径", "复制完整路径"),
-    "zh": ("复制完整路径", "复制完整路径"),
-    "zh_TW": ("複製完整路徑", "複製完整路徑"),
-    "zh_HK": ("複製完整路徑", "複製完整路徑"),
-    "zh_MO": ("複製完整路徑", "複製完整路徑"),
-    "es_ES": ("Copiar ruta completa", "Copiar rutas completas"),
-    "es_MX": ("Copiar ruta completa", "Copiar rutas completas"),
-    "es_MS": ("Copiar ruta completa", "Copiar rutas completas"),
-    "es_AR": ("Copiar ruta completa", "Copiar rutas completas"),
-    "es": ("Copiar ruta completa", "Copiar rutas completas"),
-    "pt_BR": ("Copiar caminho completo", "Copiar caminhos completos"),
-    "pt_PT": ("Copiar caminho completo", "Copiar caminhos completos"),
-    "pt": ("Copiar caminho completo", "Copiar caminhos completos"),
-    "ru": ("Копировать полный путь", "Копировать полные пути"),
-    "de": ("Vollständigen Pfad kopieren", "Vollständige Pfade kopieren"),
-    "fr": ("Copier le chemin complet", "Copier les chemins complets"),
-    "ja": ("フルパスをコピー", "フルパスをコピー"),
-    "ko": ("전체 경로 복사", "전체 경로 복사"),
-    "it": ("Copia percorso completo", "Copia percorsi completi"),
-    "pl": ("Kopiuj pełną ścieżkę", "Kopiuj pełne ścieżki"),
-    "tr": ("Tam Yolu Kopyala", "Tam Yolları Kopyala"),
-    "uk": ("Копіювати повний шлях", "Копіювати повні шляхи"),
-}
+try:
+    from copy_path_i18n import get_labels
+except ImportError:
+    def get_labels():
+        return ("Copy Full Path", "Copy Full Paths")
 
 
 class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
@@ -46,22 +22,6 @@ class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
         self._folder_path = None
         self._shortcut_registered = False
         GLib.idle_add(self._ensure_shortcut)
-
-    def _get_labels(self):
-        candidates = list(GLib.get_language_names())
-        sys_locale = locale.getlocale()[0]
-        if sys_locale:
-            candidates.append(sys_locale)
-
-        for lang in candidates:
-            norm = lang.split(".")[0].split("@")[0].replace("-", "_")
-            if norm in TRANSLATIONS:
-                return TRANSLATIONS[norm]
-            base = norm.split("_")[0]
-            if base in TRANSLATIONS:
-                return TRANSLATIONS[base]
-
-        return DEFAULT_TRANSLATION
 
     def _ensure_shortcut(self):
         if self._shortcut_registered:
@@ -132,7 +92,7 @@ class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
         if not paths:
             return []
 
-        single_label, plural_label = self._get_labels()
+        single_label, plural_label = get_labels()
         label = single_label if len(paths) == 1 else plural_label
         item = Nautilus.MenuItem(
             name="OmarchyCopyPathNautilus::copy_full_path",
@@ -151,7 +111,7 @@ class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
         if not path:
             return []
 
-        single_label, _ = self._get_labels()
+        single_label, _ = get_labels()
         item = Nautilus.MenuItem(
             name="OmarchyCopyPathNautilus::copy_folder_path",
             label=single_label,

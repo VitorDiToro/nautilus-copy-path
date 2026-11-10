@@ -50,7 +50,7 @@ cd nautilus-copy-path
 或手动安装：
 ```bash
 mkdir -p ~/.local/share/nautilus-python/extensions
-cp copy_path.py ~/.local/share/nautilus-python/extensions/
+cp copy_path.py copy_path_i18n.py ~/.local/share/nautilus-python/extensions/
 nautilus -q
 ```
 
