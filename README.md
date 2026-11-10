@@ -1,30 +1,28 @@
-# nautilus-copy-path
+# Nautilus Copy Full Path
 
-[🇺🇸 English](#english) | [🇧🇷 Português](#português)
+> Bring KDE Dolphin's **Copy Full Path** action and `Ctrl + Alt + C` shortcut to GNOME Files (Nautilus).
 
-## Supported languages / Idiomas suportados
+## 🌐 Supported Languages & Documentation
 
-🇺🇸 🇬🇧 🇧🇷 🇵🇹 🇪🇸 🇲🇽 🇦🇷 🇨🇳 🇹🇼 🇭🇰 🇷🇺 🇩🇪 🇫🇷 🇯🇵 🇰🇷 🇮🇹 🇵🇱 🇹🇷 🇺🇦
+The context menu automatically adapts to your system language. **Click any flag below to read this README in that language:**
+
+[🇺🇸](README.md) [🇬🇧](README.md) [🇧🇷](docs/readme/README.pt-BR.md) [🇵🇹](docs/readme/README.pt-PT.md) [🇪🇸](docs/readme/README.es.md) [🇲🇽](docs/readme/README.es.md) [🇦🇷](docs/readme/README.es.md) [🇨🇳](docs/readme/README.zh-CN.md) [🇹🇼](docs/readme/README.zh-TW.md) [🇭🇰](docs/readme/README.zh-TW.md) [🇷🇺](docs/readme/README.ru.md) [🇩🇪](docs/readme/README.de.md) [🇫🇷](docs/readme/README.fr.md) [🇯🇵](docs/readme/README.ja.md) [🇰🇷](docs/readme/README.ko.md) [🇮🇹](docs/readme/README.it.md) [🇵🇱](docs/readme/README.pl.md) [🇹🇷](docs/readme/README.tr.md) [🇺🇦](docs/readme/README.uk.md)
 
 ---
 
-## English
-
-A `nautilus-python` extension (GNOME Files / Nautilus 4.1+ / GTK4) that adds a **Copy Full Path** action (similar to KDE Dolphin), accessible both via the right-click context menu and the `Ctrl + Alt + C` keyboard shortcut.
-
-### Features
+## Features
 
 - **Right-click context menu:**
-  - On a single file or folder: **Copy Full Path** (automatically follows your system language)
+  - On a single file or folder: **Copy Full Path** (automatically localized to your system language)
   - On multiple selected items: **Copy Full Paths** (one path per line)
   - On the empty background of a folder: **Copy Full Path** (copies the current directory path)
 - **Keyboard shortcut (`Ctrl + Alt + C`):**
   - Copies the full path(s) of the currently selected item(s), or the current directory path if nothing is selected.
 
-### Requirements
+## Requirements
 
 - `nautilus` (GNOME Files 43+)
-- `nautilus-python` (`python3-nautilus` on Debian/Ubuntu, `nautilus-python` on Arch/Fedora)
+- `nautilus-python` (`python3-nautilus` — Debian/Ubuntu, `nautilus-python` — Arch/Fedora)
 
 **Arch Linux / Omarchy:**
 ```bash
@@ -41,7 +39,7 @@ sudo apt install nautilus python3-nautilus
 sudo dnf install nautilus nautilus-python
 ```
 
-### Installation
+## Installation
 
 ```bash
 git clone https://github.com/VitorDiToro/nautilus-copy-path.git
@@ -49,67 +47,17 @@ cd nautilus-copy-path
 ./install.sh
 ```
 
-Or manually:
+Or install manually:
 ```bash
 mkdir -p ~/.local/share/nautilus-python/extensions
 cp copy_path.py ~/.local/share/nautilus-python/extensions/
 nautilus -q
 ```
 
-### License
+## Contributing
 
-[MIT](LICENSE)
+Contributions and translations are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
----
-
-## Português
-
-Extensão `nautilus-python` (GNOME Files / Nautilus 4.1+ / GTK4) que adiciona a função **Copiar caminho completo** / **Copy Full Path** (como no KDE Dolphin), acessível tanto pelo menu de contexto (botão direito) quanto pelo atalho de teclado `Ctrl + Alt + C`.
-
-### Funcionalidades
-
-- **Menu de contexto (botão direito):**
-  - Em um arquivo ou pasta: **Copiar caminho completo** (segue automaticamente o idioma do sistema)
-  - Em múltiplos itens selecionados: **Copiar caminhos completos** (um caminho por linha)
-  - No fundo vazio de uma pasta: **Copiar caminho completo** (copia o caminho do diretório atual)
-- **Atalho de teclado (`Ctrl + Alt + C`):**
-  - Copia o caminho completo dos itens selecionados ou, caso nada esteja selecionado, o caminho do diretório aberto.
-
-### Requisitos
-
-- `nautilus` (GNOME Files 43+)
-- `nautilus-python` (`python3-nautilus` no Debian/Ubuntu, `nautilus-python` no Arch/Fedora)
-
-**Arch Linux / Omarchy:**
-```bash
-sudo pacman -S --needed nautilus nautilus-python
-```
-
-**Ubuntu / Debian:**
-```bash
-sudo apt install nautilus python3-nautilus
-```
-
-**Fedora:**
-```bash
-sudo dnf install nautilus nautilus-python
-```
-
-### Instalação
-
-```bash
-git clone https://github.com/VitorDiToro/nautilus-copy-path.git
-cd nautilus-copy-path
-./install.sh
-```
-
-Ou manualmente:
-```bash
-mkdir -p ~/.local/share/nautilus-python/extensions
-cp copy_path.py ~/.local/share/nautilus-python/extensions/
-nautilus -q
-```
-
-### Licença
+## License
 
 [MIT](LICENSE)

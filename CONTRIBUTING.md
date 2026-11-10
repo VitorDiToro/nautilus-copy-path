@@ -74,4 +74,4 @@ When adding or updating a translation:
    ```bash
    LANGUAGE=pt_BR python3 -c 'import copy_path; print(copy_path.CopyFullPathAction()._get_labels())'
    ```
-3. Add the corresponding flag to the `Supported languages / Idiomas suportados` section in `README.md`.
+3. Add a localized README under `docs/readme/README.<lang>.md` and link its flag in the `Supported Languages & Documentation` section of `README.md` and `docs/readme/README.*.md`.
