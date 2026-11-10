@@ -16,9 +16,14 @@ except ImportError:
         return ("Copy Path", "Copy Paths")
 
 SHORTCUT_ACCEL = "<Control><Alt>c"
-MENU_ACTION_NAMES = (
-    "view.extension_extensions_0_OmarchyCopyPathNautilus%3A%3Acopy_full_path",
-    "view.extension_extensions_0_OmarchyCopyPathNautilus%3A%3Acopy_folder_path",
+MENU_ACTION_SUFFIXES = (
+    "OmarchyCopyPathNautilus%3A%3Acopy_full_path",
+    "OmarchyCopyPathNautilus%3A%3Acopy_folder_path",
+)
+MENU_ACTION_NAMES = tuple(
+    f"view.extension_extensions_{idx}_{suffix}"
+    for idx in range(16)
+    for suffix in MENU_ACTION_SUFFIXES
 )
 
 
