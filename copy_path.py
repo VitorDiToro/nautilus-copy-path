@@ -5,7 +5,11 @@ from gi import require_version
 
 require_version("Gdk", "4.0")
 require_version("Gtk", "4.0")
-require_version("Nautilus", "4.1")
+try:
+    require_version("Nautilus", "4.1")
+except ValueError:
+    # Nautilus 43-46 only ship the 4.0 typelib.
+    require_version("Nautilus", "4.0")
 
 from gi.repository import Gdk, Gio, GLib, GObject, Gtk, Nautilus
 

@@ -8,7 +8,7 @@ cd nautilus-copy-path
 ./install.sh
 ```
 
-`nautilus` (GNOME Files 43+, GTK4) and `nautilus-python` (`python3-nautilus` on Debian/Ubuntu) are required. The extension has no external Python package dependencies beyond standard library modules and the system PyGObject bindings (`Gdk 4.0`, `Gtk 4.0`, `Nautilus 4.1`) loaded by Nautilus itself.
+`nautilus` (GNOME Files 43+, GTK4) and `nautilus-python` (`python3-nautilus` on Debian/Ubuntu) are required. The extension has no external Python package dependencies beyond standard library modules and the system PyGObject bindings (`Gdk 4.0`, `Gtk 4.0`, and `Nautilus 4.1`, falling back to `Nautilus 4.0` on GNOME Files 43–46) loaded by Nautilus itself.
 
 ## Commit attribution
 
