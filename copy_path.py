@@ -33,8 +33,17 @@ class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
         self._selected_paths = []
         self._folder_path = None
         self._shortcut_registered = False
+        self._action = None
+        self._action_handler_id = 0
+        self._window_added_handler_id = 0
+        self._shutdown_handler_id = 0
         self._configured_windows = weakref.WeakSet()
-        GLib.idle_add(self._ensure_shortcut)
+        self._idle_id = GLib.idle_add(self._on_idle_ensure_shortcut)
+
+    def _on_idle_ensure_shortcut(self):
+        self._idle_id = 0
+        self._ensure_shortcut()
+        return False
 
     def _attach_menu_accels(self, window):
         if not isinstance(window, Gtk.Widget) or window in self._configured_windows:
@@ -55,17 +64,57 @@ class CopyFullPathAction(GObject.GObject, Nautilus.MenuProvider):
     def _on_window_added(self, _app, window):
         self._attach_menu_accels(window)
 
+    def _on_app_shutdown(self, app):
+        if self._idle_id:
+            GLib.source_remove(self._idle_id)
+            self._idle_id = 0
+
+        if self._action is not None:
+            if self._action_handler_id:
+                self._action.disconnect(self._action_handler_id)
+                self._action_handler_id = 0
+            self._action = None
+
+        if isinstance(app, Gtk.Application):
+            app.set_accels_for_action("app.copy-full-path", [])
+
+        if isinstance(app, Gio.ActionMap):
+            app.remove_action("copy-full-path")
+
+        if self._window_added_handler_id:
+            app.disconnect(self._window_added_handler_id)
+            self._window_added_handler_id = 0
+
+        if self._shutdown_handler_id:
+            app.disconnect(self._shutdown_handler_id)
+            self._shutdown_handler_id = 0
+
+        self._configured_windows.clear()
+        self._shortcut_registered = False
+
     def _ensure_shortcut(self):
+        if self._idle_id:
+            GLib.source_remove(self._idle_id)
+            self._idle_id = 0
+
         app = Gio.Application.get_default()
         if not isinstance(app, Gtk.Application):
             return False
 
         if not self._shortcut_registered:
             action = Gio.SimpleAction.new("copy-full-path", None)
-            action.connect("activate", self._on_shortcut_activate)
+            self._action_handler_id = action.connect(
+                "activate", self._on_shortcut_activate
+            )
             app.add_action(action)
             app.set_accels_for_action("app.copy-full-path", [SHORTCUT_ACCEL])
-            app.connect("window-added", self._on_window_added)
+            self._window_added_handler_id = app.connect(
+                "window-added", self._on_window_added
+            )
+            self._shutdown_handler_id = app.connect(
+                "shutdown", self._on_app_shutdown
+            )
+            self._action = action
             self._shortcut_registered = True
 
         for window in app.get_windows():
